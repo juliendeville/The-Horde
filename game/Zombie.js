@@ -1,5 +1,4 @@
 Class.create("Zombie", {
-    protected: false,
     element: null,
     direction: "none",
     texture: "zombie",
@@ -7,10 +6,13 @@ Class.create("Zombie", {
     case: 32,
     perso: 64,
     speed: 4,
-    target: {x: 0, y: 0},
+    path: null,
+    rank: 0,
     scene: null,
     hitbox: null,
     follower: null,
+    base_x: 0,
+    base_y: 0,
     initialize: function(scene, stage, coords, texture) {
     	if( !scene || !coords || typeof coords != "object" )
     		return false;
@@ -19,47 +21,48 @@ Class.create("Zombie", {
     		this.texture = texture;
         this.element = this.scene.createElement();
         this.element.drawImage( this.texture );
-        var x = coords.x - this.perso / 2 + this.case / 2;
-        var y =  coords.y - this.perso + this.case;
-        this.element.x = x;
-        this.element.y = y;
-        this.target.x = x;
-        this.target.y = y;
-        this.element.addLoopListener( this.move.bind( this ) );
+        this.base_x = -this.perso / 2 + this.case / 2;
+        this.base_y = -this.perso + this.case;
+        this.element.x = coords.x;
+        this.element.y = coords.y;
+        //this.element.addLoopListener( this.move.bind( this ) );
         this.hitbox = Class.New("Entity", [stage]);
-        this.hitbox.rect( 32 );
-        this.hitbox.position( coords.x, coords.y );
+        this.hitbox.rect( 12 );
+        this.hitbox.position( coords.x+10 - this.base_x, coords.y+10 - this.base_y );
     },
     move: function() {
-        if( this.element.x > this.target.x ) {
+        if( this.element.x > this.path[this.path.length - 1-this.rank].x ) {
             this.element.x -= this.speed;
             this.hitbox.move( -this.speed, 0 );
-        } else if( this.element.x < this.target.x ) {
+        } else if( this.element.x < this.path[this.path.length - 1-this.rank].x ) {
             this.element.x += this.speed;
             this.hitbox.move( this.speed, 0 );
         }
-        if( this.element.y < this.target.y ) {
+        if( this.element.y < this.path[this.path.length - 1-this.rank].y ) {
             this.element.y += this.speed;
             this.hitbox.move( 0, this.speed );
-        } else if( this.element.y > this.target.y ) {
+        } else if( this.element.y > this.path[this.path.length - 1-this.rank].y ) {
             this.element.y -= this.speed;
             this.hitbox.move( 0, -this.speed );
         }
+
+        if( this.follower ){
+            this.follower.move();
+        }
         return;
     },
-    to: function( coords ) {
-        if( !coords || typeof coords != "object" )
-            return;
-        this.target = coords;
+    UpRank: function() {
+        this.rank++;
+        if( this.follower )
+            this.follower.UpRank();
     },
-    addFollower: function( follower ) {
-        if( this.follower ) {
-            var walker = this.follower;
-            this.follower = follower;
-            this.follower.addFollower( walker );
-            this.follower.target = {x: this.element.x, y: this.element.y };
-            this.follower.follower.target = {x: this.follower.x, y: this.follower.y };
-        } else
-            this.follower = follower;
+    DownRank: function() {
+        this.rank--;
+        if( this.follower )
+            this.follower.DownRank();
+    },
+    IndependanceDay: function() {
+        this.element.addLoopListener( this.move.bind( this ) );
+        this.rank = 0;
     }
 });

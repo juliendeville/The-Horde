@@ -6,7 +6,7 @@ Class.create("Controls", {
       down: false,
       action: false
     },
-    initialize: function() {
+    initialize: function(special) {
       var self = this;
       //haut
       canvas.Input.keyDown([Input.Up, 90], function(e) {
@@ -49,14 +49,14 @@ Class.create("Controls", {
         self.state.right = false;
       });
 
-
-      //bwaaaa
-      canvas.Input.keyDown([Input.Space], function(e) {
-        self.state.action = true;
-      });
-      canvas.Input.keyUp(Input.Space, function(e) {
-        self.state.action = false;
-      });
-
+      if( special.action ) {
+        //bwaaaa
+        canvas.Input.keyDown([Input.Space], function(e) {
+          self.state.action = true;
+        });
+        canvas.Input.keyUp(Input.Space, function(e) {
+          self.state.action = false;
+        });
+      }
     }
 });

@@ -31,23 +31,25 @@ Class.create("Zombie", {
         this.hitbox.position( coords.x+10 - this.base_x, coords.y+10 - this.base_y );
     },
     move: function() {
-        if( this.element.x > this.path[this.path.length - 1-this.rank].x ) {
-            this.element.x -= this.speed;
-            this.hitbox.move( -this.speed, 0 );
-        } else if( this.element.x < this.path[this.path.length - 1-this.rank].x ) {
-            this.element.x += this.speed;
-            this.hitbox.move( this.speed, 0 );
-        }
-        if( this.element.y < this.path[this.path.length - 1-this.rank].y ) {
-            this.element.y += this.speed;
-            this.hitbox.move( 0, this.speed );
-        } else if( this.element.y > this.path[this.path.length - 1-this.rank].y ) {
-            this.element.y -= this.speed;
-            this.hitbox.move( 0, -this.speed );
-        }
+        if( this.path[this.path.length - 1-this.rank] ) {
+            if( this.element.x > this.path[this.path.length - 1-this.rank].x ) {
+                this.element.x -= this.speed;
+                this.hitbox.move( -this.speed, 0 );
+            } else if( this.element.x < this.path[this.path.length - 1-this.rank].x ) {
+                this.element.x += this.speed;
+                this.hitbox.move( this.speed, 0 );
+            }
+            if( this.element.y < this.path[this.path.length - 1-this.rank].y ) {
+                this.element.y += this.speed;
+                this.hitbox.move( 0, this.speed );
+            } else if( this.element.y > this.path[this.path.length - 1-this.rank].y ) {
+                this.element.y -= this.speed;
+                this.hitbox.move( 0, -this.speed );
+            }
 
-        if( this.follower ){
-            this.follower.move();
+            if( this.follower ){
+                this.follower.move();
+            }
         }
         return;
     },

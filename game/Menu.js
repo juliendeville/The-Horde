@@ -14,7 +14,7 @@ canvas.Scene.new({
     var self = this;
 
     //déclaration des contrôles
-    self.controls = Class.new("Controls");
+    self.controls = Class.new("Controls", [{special :false}]);
 
     self.backg = self.createElement();
     self.backg.drawImage("background");

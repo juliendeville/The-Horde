@@ -9,9 +9,19 @@
  <tileset firstgid="586" name="Arbre" tilewidth="32" tileheight="32">
   <image source="../sprites/Arbre.png" trans="ffffff" width="32" height="64"/>
  </tileset>
- <layer name="Calque de Tile 1" width="44" height="28">
+ <layer name="Sol" width="44" height="28">
   <data encoding="base64" compression="zlib">
-   eJztmEkOgCAMRZGbOQ/c/z6WhYkSqC2DBNPF2yj+/xhijIdW6mgMUxmqw+XbqXhSn7cYYsbdt9dPQtdcv7euUL4vE+uJ9TVIHjYfzNcdE+rhnAdsXd3MlLP01hPq4uz7/R42jpKJ7Z/rS+2NhZPpG5vj/fAl4iu+4iu+4otjvwEGYMycXcp3gswZWBrxXSFzA/ZGfEvB9e0LzY2a+/f1rY34iq/PtyVq/9vhcgLuUFwH
+   eJztmEsKgDAMBWtvJvht738fsxFqaEP6kbQli9lofBljENFZY9xgeGG4Dq/vYmTxTIfQd7VfUsdKe+GsWCbVp9SX64fvh/LFNak+NfuQ8m69X2GfHF9qruG5nPnHaqnrsW9p39pnwq3t5f3ARX3VV33VV33n8t0gcweOxtl/+Z6QeQH3IL697AP1LV0DN3f2+Uqjvuo7uq/0v51cHnRHSkA=
+  </data>
+ </layer>
+ <layer name="normal" width="44" height="28">
+  <data encoding="base64" compression="zlib">
+   eJzt17kJACAMQFFxM7Vz/4GMnYWK9wH/QboYQxCCSuFlXt/uoK63v5b8XM7qOZTqnbpn5tzKmj210twd73K0FwAAXmBkN1kJx44CAFwU/0o/xI8CzuASBQ==
+  </data>
+ </layer>
+ <layer name="air" width="44" height="28">
+  <data encoding="base64" compression="zlib">
+   eJzt10sOABAMRdHG8ux/QSImBohSnyb3JGb1vIgJEfwshtcNxrT9ZuZbM9b30Mu7dc7OPstMTVY9e+JdrnYBAAAAABT5r+RheZQAgbQROQ==
   </data>
  </layer>
  <objectgroup name="terrifies" width="44" height="28">
@@ -34,52 +44,52 @@
   <object x="224" y="480" width="32" height="32"/>
   <object x="128" y="480" width="32" height="32"/>
   <object x="704" y="704" width="32" height="32"/>
+  <object x="160" y="384" width="32" height="32"/>
+  <object x="1312" y="128" width="32" height="32"/>
+  <object x="1312" y="800" width="32" height="32"/>
+  <object x="64" y="768" width="32" height="32"/>
+  <object x="896" y="704" width="32" height="32"/>
+  <object x="1312" y="96" width="32" height="32"/>
+  <object x="1312" y="768" width="32" height="32"/>
+  <object x="1056" y="512" width="32" height="32"/>
+  <object x="128" y="384" width="32" height="32"/>
+  <object x="672" y="128" width="32" height="32"/>
+  <object x="64" y="160" width="32" height="32"/>
+  <object x="416" y="96" width="32" height="32"/>
  </objectgroup>
  <objectgroup color="#4c8c00" name="joueur" width="44" height="28">
   <object x="480" y="704" width="32" height="32"/>
  </objectgroup>
- <objectgroup color="#c645b3" name="fuyards" width="44" height="28">
-  <object x="64" y="160" width="32" height="32"/>
-  <object x="1312" y="96" width="32" height="32"/>
-  <object x="1312" y="768" width="32" height="32"/>
-  <object x="128" y="384" width="32" height="32"/>
-  <object x="1312" y="800" width="32" height="32"/>
-  <object x="672" y="128" width="32" height="32"/>
-  <object x="416" y="96" width="32" height="32"/>
-  <object x="64" y="768" width="32" height="32"/>
-  <object x="896" y="704" width="32" height="32"/>
-  <object x="1056" y="512" width="32" height="32"/>
- </objectgroup>
- <objectgroup color="#f7291a" name="heros" width="44" height="28">
-  <object x="160" y="384" width="32" height="32"/>
-  <object x="1312" y="128" width="32" height="32"/>
- </objectgroup>
+ <objectgroup color="#c645b3" name="fuyards" width="44" height="28"/>
+ <objectgroup color="#f7291a" name="heros" width="44" height="28"/>
  <objectgroup color="#00ff39" name="murs" width="44" height="28">
   <object x="0" y="0" width="1408" height="64"/>
   <object x="1376" y="64" width="32" height="832"/>
-  <object x="0" y="832" width="1376" height="64"/>
   <object x="0" y="64" width="32" height="768"/>
-  <object x="96" y="192" width="32" height="64"/>
   <object x="64" y="96" width="128" height="64"/>
-  <object x="192" y="192" width="32" height="64"/>
   <object x="224" y="96" width="128" height="64"/>
-  <object x="320" y="160" width="32" height="64"/>
-  <object x="384" y="96" width="32" height="64"/>
-  <object x="448" y="128" width="32" height="64"/>
-  <object x="512" y="64" width="32" height="64"/>
-  <object x="544" y="160" width="32" height="64"/>
-  <object x="640" y="128" width="32" height="96"/>
-  <object x="768" y="96" width="32" height="64"/>
-  <object x="864" y="192" width="32" height="64"/>
   <object x="832" y="96" width="192" height="64"/>
-  <object x="992" y="160" width="32" height="64"/>
-  <object x="1056" y="64" width="32" height="96"/>
   <object x="1120" y="96" width="64" height="64"/>
-  <object x="1152" y="160" width="32" height="64"/>
-  <object x="1216" y="96" width="32" height="64"/>
-  <object x="1216" y="192" width="32" height="64"/>
-  <object x="1280" y="128" width="32" height="64"/>
-  <object x="672" y="512" width="96" height="96"/>
+  <object x="672" y="544" width="96" height="64"/>
+  <object x="0" y="832" width="32" height="64"/>
+  <object x="32" y="864" width="1344" height="32"/>
+  <object x="96" y="224" width="32" height="32"/>
+  <object x="192" y="224" width="32" height="32"/>
+  <object x="320" y="192" width="32" height="32"/>
+  <object x="384" y="128" width="32" height="32"/>
+  <object x="448" y="160" width="32" height="32"/>
+  <object x="512" y="96" width="32" height="32"/>
+  <object x="544" y="192" width="32" height="32"/>
+  <object x="640" y="160" width="32" height="64"/>
+  <object x="768" y="128" width="32" height="32"/>
+  <object x="864" y="224" width="32" height="32"/>
+  <object x="992" y="192" width="32" height="32"/>
+  <object x="1056" y="64" width="32" height="32"/>
+  <object x="1056" y="128" width="32" height="32"/>
+  <object x="1152" y="192" width="32" height="32"/>
+  <object x="1216" y="128" width="32" height="32"/>
+  <object x="1216" y="224" width="32" height="32"/>
+  <object x="1280" y="160" width="32" height="32"/>
  </objectgroup>
  <objectgroup color="#262fff" name="sorties" width="44" height="28">
   <object x="352" y="640" width="32" height="32"/>

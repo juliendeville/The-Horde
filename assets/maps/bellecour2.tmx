@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="44" height="28" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="fond" tilewidth="32" tileheight="32">
+  <image source="../sprites/bellecour.jpg" trans="ffffff" width="768" height="768"/>
+ </tileset>
+ <tileset firstgid="577" name="dada" tilewidth="32" tileheight="32">
+  <image source="../sprites/dada.jpg" trans="ffffff" width="98" height="98"/>
+ </tileset>
+ <tileset firstgid="586" name="Arbre" tilewidth="32" tileheight="32">
+  <image source="../sprites/Arbre.png" trans="ffffff" width="32" height="64"/>
+ </tileset>
+ <tileset firstgid="588" name="noir" tilewidth="32" tileheight="32">
+  <image source="../sprites/noir.png" trans="ffffff" width="32" height="32"/>
+ </tileset>
+ <layer name="Sol" width="44" height="28">
+  <data encoding="base64" compression="zlib">
+   eJzt0KERACAMBMFAZ/j0Xw8VMBFggBWrYu6TPSIBuEKLc/Tq1atX717vKHas7v6rV+9bvcAfJqJnJ/I=
+  </data>
+ </layer>
+ <layer name="normal" width="44" height="28">
+  <data encoding="base64" compression="zlib">
+   eJztlkEKwDAIBEPf1rRN8v//xEtvhV50UZiBPSnuHG0NAACqMA+/qHyXQ5S+me6oevCN7cnie9q8W66fvSy+t80fyyjiq76j6sE3tgffbzx+hzcAAF5sLNkZTA==
+  </data>
+ </layer>
+ <layer name="air" width="44" height="28">
+  <data encoding="base64" compression="zlib">
+   eJztzrEJACEUBcHH70zNrv+CtAMRA4Obgc03AQDgVKukr0a9PgHY++o+gD+bDI4F2Q==
+  </data>
+ </layer>
+ <objectgroup name="terrifies" width="44" height="28">
+  <object x="768" y="576" width="32" height="32"/>
+  <object x="896" y="512" width="32" height="32"/>
+  <object x="928" y="320" width="32" height="32"/>
+  <object x="896" y="352" width="32" height="32"/>
+  <object x="704" y="384" width="32" height="32"/>
+  <object x="704" y="416" width="32" height="32"/>
+  <object x="448" y="320" width="32" height="32"/>
+  <object x="448" y="608" width="32" height="32"/>
+  <object x="544" y="448" width="32" height="32"/>
+  <object x="448" y="640" width="32" height="32"/>
+  <object x="928" y="352" width="32" height="32"/>
+  <object x="960" y="352" width="32" height="32"/>
+  <object x="928" y="384" width="32" height="32"/>
+  <object x="928" y="512" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup color="#4c8c00" name="joueur" width="44" height="28">
+  <object x="608" y="576" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup color="#c645b3" name="fuyards" width="44" height="28"/>
+ <objectgroup color="#f7291a" name="heros" width="44" height="28"/>
+ <objectgroup color="#00ff39" name="murs" width="44" height="28">
+  <object x="416" y="256" width="32" height="448"/>
+  <object x="448" y="672" width="576" height="32"/>
+  <object x="448" y="256" width="544" height="64"/>
+  <object x="992" y="256" width="32" height="416"/>
+  <object x="672" y="448" width="96" height="64"/>
+ </objectgroup>
+ <objectgroup color="#262fff" name="sorties" width="44" height="28">
+  <object x="576" y="512" width="32" height="32"/>
+  <object x="832" y="512" width="32" height="32"/>
+ </objectgroup>
+</map>

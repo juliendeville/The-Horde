@@ -22,7 +22,7 @@ canvas.Scene.new({
     self.backg.y = 0;
 
     self.backg.click( function() {
-      canvas.Scene.call("Bellecour");
+      canvas.Scene.call("Parking");
     });
 
     stage.append( self.backg );

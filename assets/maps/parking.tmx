@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="44" height="28" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="noir" tilewidth="32" tileheight="32">
+  <image source="../sprites/noir.png" trans="ffffff" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="2" name="bitume" tilewidth="32" tileheight="32">
+  <image source="../sprites/bitume.png" trans="ffffff" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="3" name="murs" tilewidth="32" tileheight="32">
+  <image source="../sprites/murs.png" trans="ffffff" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="4" name="trace" tilewidth="32" tileheight="32">
+  <image source="../sprites/trace.png" trans="ffffff" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="5" name="trace2" tilewidth="32" tileheight="32">
+  <image source="../sprites/trace2.png" trans="ffffff" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="6" name="trace3" tilewidth="32" tileheight="32">
+  <image source="../sprites/trace3.png" trans="ffffff" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="7" name="voiture1" tilewidth="32" tileheight="32">
+  <image source="../sprites/voiture1.png" trans="ffffff" width="64" height="32"/>
+ </tileset>
+ <tileset firstgid="9" name="voiture2" tilewidth="32" tileheight="32">
+  <image source="../sprites/voiture2.png" trans="ffffff" width="64" height="32"/>
+ </tileset>
+ <tileset firstgid="11" name="voiture3" tilewidth="32" tileheight="32">
+  <image source="../sprites/voiture3.png" trans="ffffff" width="64" height="32"/>
+ </tileset>
+ <layer name="Sol" width="44" height="28">
+  <data encoding="base64" compression="zlib">
+   eJztlzEKADAIxM72/3/uAwoFHSyHGTIVbJAshqQASLIbmeq7GsD3nv/6O/vGfr196QFfesCXHvClh//7dfOlh7m+Tvcm1DiaxgfJ
+  </data>
+ </layer>
+ <layer name="normal" width="44" height="28">
+  <data encoding="base64" compression="zlib">
+   eJztl90KgCAMhbvpv/d/3gwaHMa2TJxm+IEgDt10x1nD0Ol0vsiojE+Z1s+1DqHF2wJraNvd30M7wDaHttz9UbBLa5REi+eCYpJy7R0v6kHzxWO38lAS9I3551iat+Z5wv3G6EOa581T/bnsmj6kc89dzxA8J/I9CbZUrXhi5Z/bat25WI1alKy/Vs5xL1bOvfWg3Yc3eqj1pkl+aT8pGvWsDZzYN4HHVLI+oG9+1pa20VbrvrUAfy9Qs7HfQtpYbr5+n4iW/y86/+QEZX8Eig==
+  </data>
+ </layer>
+ <layer name="air" width="44" height="28">
+  <data encoding="base64" compression="zlib">
+   eJztwYEAAAAAw6D5U5/gBlUBAAAAAM8AE0AAAQ==
+  </data>
+ </layer>
+ <objectgroup name="terrifies" width="44" height="28">
+  <object x="512" y="288" width="32" height="32"/>
+  <object x="704" y="320" width="32" height="32"/>
+  <object x="608" y="512" width="32" height="32"/>
+  <object x="512" y="672" width="32" height="32"/>
+  <object x="544" y="736" width="32" height="32"/>
+  <object x="768" y="736" width="32" height="32"/>
+  <object x="832" y="416" width="32" height="32"/>
+  <object x="832" y="256" width="32" height="32"/>
+  <object x="768" y="192" width="32" height="32"/>
+  <object x="608" y="192" width="32" height="32"/>
+  <object x="352" y="384" width="32" height="32"/>
+  <object x="352" y="608" width="32" height="32"/>
+  <object x="992" y="192" width="32" height="32"/>
+  <object x="1024" y="384" width="32" height="32"/>
+  <object x="960" y="544" width="32" height="32"/>
+  <object x="864" y="672" width="32" height="32"/>
+  <object x="736" y="480" width="32" height="32"/>
+  <object x="1056" y="736" width="32" height="32"/>
+  <object x="448" y="192" width="32" height="32"/>
+  <object x="448" y="544" width="32" height="32"/>
+  <object x="448" y="768" width="32" height="32"/>
+  <object x="800" y="576" width="32" height="32"/>
+  <object x="896" y="480" width="32" height="32"/>
+  <object x="608" y="352" width="32" height="32"/>
+  <object x="1056" y="480" width="32" height="32"/>
+  <object x="384" y="256" width="32" height="32"/>
+  <object x="672" y="768" width="32" height="32"/>
+  <object x="928" y="768" width="32" height="32"/>
+  <object x="1056" y="256" width="32" height="32"/>
+  <object x="960" y="256" width="32" height="32"/>
+  <object x="736" y="256" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup color="#4c8c00" name="joueur" width="44" height="28">
+  <object x="896" y="160" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup color="#c645b3" name="fuyards" width="44" height="28">
+  <object x="1056" y="160" width="32" height="32"/>
+  <object x="736" y="160" width="32" height="32"/>
+  <object x="640" y="224" width="32" height="32"/>
+  <object x="512" y="192" width="32" height="32"/>
+  <object x="384" y="192" width="32" height="32"/>
+  <object x="416" y="352" width="32" height="32"/>
+  <object x="384" y="448" width="32" height="32"/>
+  <object x="416" y="544" width="32" height="32"/>
+  <object x="480" y="640" width="32" height="32"/>
+  <object x="576" y="416" width="32" height="32"/>
+  <object x="608" y="608" width="32" height="32"/>
+  <object x="608" y="736" width="32" height="32"/>
+  <object x="736" y="576" width="32" height="32"/>
+  <object x="800" y="672" width="32" height="32"/>
+  <object x="992" y="736" width="32" height="32"/>
+  <object x="1056" y="576" width="32" height="32"/>
+  <object x="928" y="608" width="32" height="32"/>
+  <object x="864" y="352" width="32" height="32"/>
+  <object x="736" y="352" width="32" height="32"/>
+  <object x="928" y="320" width="32" height="32"/>
+  <object x="1024" y="288" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup color="#f7291a" name="heros" width="44" height="28"/>
+ <objectgroup color="#00ff39" name="murs" width="44" height="28">
+  <object x="320" y="96" width="32" height="736"/>
+  <object x="352" y="800" width="832" height="32"/>
+  <object x="352" y="96" width="320" height="64"/>
+  <object x="1152" y="96" width="32" height="704"/>
+  <object x="512" y="224" width="32" height="32"/>
+  <object x="512" y="320" width="32" height="32"/>
+  <object x="512" y="416" width="32" height="32"/>
+  <object x="512" y="512" width="32" height="32"/>
+  <object x="512" y="608" width="32" height="32"/>
+  <object x="512" y="704" width="32" height="32"/>
+  <object x="736" y="320" width="32" height="32"/>
+  <object x="736" y="416" width="32" height="32"/>
+  <object x="736" y="512" width="32" height="32"/>
+  <object x="736" y="608" width="32" height="32"/>
+  <object x="736" y="704" width="32" height="32"/>
+  <object x="960" y="704" width="32" height="32"/>
+  <object x="960" y="608" width="32" height="32"/>
+  <object x="960" y="512" width="32" height="32"/>
+  <object x="960" y="416" width="32" height="32"/>
+  <object x="960" y="224" width="32" height="32"/>
+  <object x="736" y="224" width="32" height="32"/>
+  <object x="960" y="320" width="32" height="32"/>
+  <object x="448" y="224" width="64" height="32"/>
+  <object x="544" y="224" width="64" height="64"/>
+  <object x="448" y="288" width="64" height="64"/>
+  <object x="544" y="320" width="64" height="64"/>
+  <object x="448" y="416" width="64" height="32"/>
+  <object x="544" y="448" width="64" height="32"/>
+  <object x="640" y="288" width="64" height="32"/>
+  <object x="672" y="224" width="64" height="32"/>
+  <object x="800" y="224" width="64" height="32"/>
+  <object x="768" y="256" width="64" height="32"/>
+  <object x="768" y="288" width="64" height="32"/>
+  <object x="864" y="288" width="64" height="32"/>
+  <object x="992" y="224" width="64" height="32"/>
+  <object x="992" y="256" width="64" height="32"/>
+  <object x="992" y="320" width="64" height="32"/>
+  <object x="992" y="352" width="64" height="32"/>
+  <object x="896" y="352" width="64" height="32"/>
+  <object x="896" y="384" width="64" height="32"/>
+  <object x="768" y="384" width="64" height="96"/>
+  <object x="672" y="416" width="64" height="32"/>
+  <object x="672" y="352" width="64" height="32"/>
+  <object x="448" y="480" width="64" height="64"/>
+  <object x="544" y="512" width="64" height="64"/>
+  <object x="448" y="576" width="64" height="32"/>
+  <object x="448" y="672" width="64" height="64"/>
+  <object x="416" y="736" width="64" height="32"/>
+  <object x="544" y="640" width="64" height="32"/>
+  <object x="576" y="704" width="64" height="32"/>
+  <object x="672" y="704" width="64" height="32"/>
+  <object x="672" y="640" width="64" height="32"/>
+  <object x="672" y="576" width="64" height="32"/>
+  <object x="672" y="512" width="64" height="32"/>
+  <object x="672" y="480" width="64" height="32"/>
+  <object x="768" y="544" width="64" height="32"/>
+  <object x="768" y="608" width="64" height="64"/>
+  <object x="896" y="640" width="64" height="32"/>
+  <object x="864" y="704" width="64" height="32"/>
+  <object x="992" y="640" width="64" height="32"/>
+  <object x="1024" y="704" width="64" height="32"/>
+  <object x="896" y="448" width="64" height="32"/>
+  <object x="992" y="480" width="64" height="32"/>
+  <object x="704" y="96" width="448" height="64"/>
+  <object x="672" y="96" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup color="#262fff" name="sorties" width="44" height="28">
+  <object x="672" y="128" width="32" height="32"/>
+ </objectgroup>
+</map>

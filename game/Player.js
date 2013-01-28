@@ -5,7 +5,7 @@ Class.create("Player", {
     hitbox: null,
     case: 32,
     perso: 64,
-    speed: 4,
+    speed: 3,
     scene: null,
     hitbox: null,
     follower: null,

@@ -5,7 +5,7 @@ Class.create("Zombie", {
     hitbox: null,
     case: 32,
     perso: 64,
-    speed: 4,
+    speed: 3,
     path: null,
     rank: 0,
     scene: null,

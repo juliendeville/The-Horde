@@ -29,7 +29,7 @@ canvas.Scene.new({
     },
     //Method called when resources are loaded
     ready: function(stage) {
-        GameReady.bind( this )( stage, {action:false}, "parking.json", {required: 30, total: 51});
+        GameReady.bind( this )( stage, {action:false}, "parking.json", {required: 15, total: 26, stepsMin: 6, stepsMax: 10});
     },
     //Method called at each render (60 FPS)
     render: function(stage) {

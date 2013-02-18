@@ -5,7 +5,8 @@ Class.create("Zombie", {
     hitbox: null,
     case: 32,
     perso: 64,
-    speed: 3,
+    steps: 0,
+    step: 0,
     path: null,
     rank: 0,
     scene: null,
@@ -31,6 +32,41 @@ Class.create("Zombie", {
         this.hitbox.position( coords.x+10 - this.base_x, coords.y+10 - this.base_y );
     },
     move: function() {
+        var self = this;
+
+        if( self.path.length < 2 + self.rank )
+            return;
+
+        var mouvement = self.step / self.steps * self.case;
+
+        var hitmove;
+        if( self.path[self.path.length - 1-self.rank].x > self.path[self.path.length - 2-self.rank].x ) {//droite
+            hitmove = ( self.path[self.path.length - 1-self.rank].x - self.element.x ) / ( self.steps - self.step );
+            self.element.x += hitmove;
+            self.hitbox.move( hitmove, 0 );
+        } else if( self.path[self.path.length - 1-self.rank].x < self.path[self.path.length - 2-self.rank].x ) {//gauche
+            hitmove = ( self.path[self.path.length - 1-self.rank].x - self.element.x ) / ( self.steps - self.step );
+            self.element.x += hitmove;
+            self.hitbox.move( hitmove, 0 );
+        } else if( self.path[self.path.length - 1-self.rank].y > self.path[self.path.length - 2-self.rank].y ) {//bas
+            hitmove = ( self.path[self.path.length - 1-self.rank].y - self.element.y ) / ( self.steps - self.step );
+            self.element.y += hitmove;
+            self.hitbox.move( 0, hitmove );
+        } else if( self.path[self.path.length - 1-self.rank].y < self.path[self.path.length - 2-self.rank].y ) {//haut
+            hitmove = ( self.path[self.path.length - 1-self.rank].y - self.element.y ) / ( self.steps - self.step );
+            self.element.y += hitmove;
+            self.hitbox.move( 0, hitmove );
+        }
+        if( hitmove > 0 )
+            self.step++;
+        if( self.step == self.steps ) {
+            self.step = 0;
+        }
+
+        if( self.follower ){
+            self.follower.move();
+        }
+/*
         if( this.path[this.path.length - 1-this.rank] ) {
             if( this.element.x > this.path[this.path.length - 1-this.rank].x ) {
                 this.element.x -= this.speed;
@@ -51,6 +87,7 @@ Class.create("Zombie", {
                 this.follower.move();
             }
         }
+        */
         return;
     },
     UpRank: function() {
@@ -66,5 +103,12 @@ Class.create("Zombie", {
     IndependanceDay: function() {
         this.element.addLoopListener( this.move.bind( this ) );
         this.rank = 0;
+    },
+    changeSteps: function( steps ) {
+        this.steps = steps;
+        
+        if( this.follower ){
+            this.follower.changeSteps(steps);
+        }
     }
 });

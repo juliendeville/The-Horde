@@ -52,6 +52,7 @@ console.log( "debut", new Date() -self.debut );
 
             if( espece.name == "joueur" ) {
                 self.player = Class.new( "Player", [ self, stage, espece.objects[0] ] );
+                self.player.steps = self.bar_settings.stepsMax;
             } else if( espece.name == "fuyards" ) {
                 espece.objects.forEach( function( surv ) {
                     var survivant = Class.new( "Survivant", [ self, stage, surv, "fuyards" ] ) ;
@@ -190,6 +191,7 @@ function GameRender( stage ) {
                         self.hitwalkers.push( walker.hitbox );
                         el.undead = true;
                         self.nb_killed++;
+                        self.player.changeSteps( self.bar_settings.stepsMax - Math.floor( self.nb_killed/ self.bar_settings.total * (self.bar_settings.stepsMax-self.bar_settings.stepsMin) ) );
 
                         if( self.nb_killed > self.bar_settings.required ) {
                             self.bar_bonus.fillRect( 

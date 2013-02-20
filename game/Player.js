@@ -5,7 +5,9 @@ Class.create("Player", {
     hitbox: null,
     case: 32,
     perso: 64,
-    speed: 3,
+    steps: 0,
+    step: 0,
+    rank: 0,
     scene: null,
     hitbox: null,
     follower: null,
@@ -34,6 +36,7 @@ Class.create("Player", {
         var self = this;
 
         function walk() {
+            /*
             if( self.element.x > self.path[self.path.length - 1].x ) {
                 self.element.x -= self.speed;
                 self.hitbox.move( -self.speed, 0 );
@@ -48,6 +51,42 @@ Class.create("Player", {
                 self.element.y -= self.speed;
                 self.hitbox.move( 0, -self.speed );
             }
+
+*/
+            if( self.path.length < 2 + self.rank )
+                return;
+
+            var mouvement = self.step / self.steps * self.case;
+
+            var hitmove;
+            if( self.path[self.path.length - 1-self.rank].x > self.path[self.path.length - 2-self.rank].x ) {//droite
+                hitmove = ( self.path[self.path.length - 1-self.rank].x - self.element.x ) / ( self.steps - self.step );
+                self.element.x += hitmove;
+                self.hitbox.move( hitmove, 0 );
+            } else if( self.path[self.path.length - 1-self.rank].x < self.path[self.path.length - 2-self.rank].x ) {//gauche
+                hitmove = ( self.path[self.path.length - 1-self.rank].x - self.element.x ) / ( self.steps - self.step );
+                self.element.x += hitmove;
+                self.hitbox.move( hitmove, 0 );
+            } else if( self.path[self.path.length - 1-self.rank].y > self.path[self.path.length - 2-self.rank].y ) {//bas
+                hitmove = ( self.path[self.path.length - 1-self.rank].y - self.element.y ) / ( self.steps - self.step );
+                self.element.y += hitmove;
+                self.hitbox.move( 0, hitmove );
+            } else if( self.path[self.path.length - 1-self.rank].y < self.path[self.path.length - 2-self.rank].y ) {//haut
+                hitmove = ( self.path[self.path.length - 1-self.rank].y - self.element.y ) / ( self.steps - self.step );
+                //hitmove = Math.round( hitmove * 100 ) / 100;
+                self.element.y += hitmove;
+                self.hitbox.move( 0, hitmove );
+            }
+            if( hitmove != 0 )
+                self.step++;
+            if( self.step == self.steps ) {
+                self.step = 0;
+            }
+/*
+            if( self.follower ){
+                self.follower.move();
+            }
+            */
         }
         function direction() {
 
@@ -74,7 +113,7 @@ Class.create("Player", {
             }
         }
 
-        if( ( this.element.x + this.base_x ) % this.case == 0 && ( this.element.y + this.base_y ) % this.case == 0 ) {
+        if( ( Math.round(this.element.x) + this.base_x ) % this.case == 0 && ( Math.round(this.element.y) + this.base_y ) % this.case == 0 ) {
             direction();
         }
 
@@ -95,5 +134,12 @@ Class.create("Player", {
         }
         this.follower.path = this.path;
         this.follower.UpRank();
+    },
+    changeSteps: function( steps ) {
+        this.steps = steps;
+        
+        if( this.follower ){
+            this.follower.changeSteps(steps);
+        }
     }
 });

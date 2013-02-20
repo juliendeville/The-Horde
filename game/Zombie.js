@@ -57,7 +57,7 @@ Class.create("Zombie", {
             self.element.y += hitmove;
             self.hitbox.move( 0, hitmove );
         }
-        if( hitmove > 0 )
+        if( hitmove != 0 )
             self.step++;
         if( self.step == self.steps ) {
             self.step = 0;
